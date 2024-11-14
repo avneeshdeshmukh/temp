@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+    <title>Create Recipe</title>
+   
+</head>
+
+<body>
+    <!-- header -->
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                <span class="ml-3 text-xl">Savory Secrets</span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+                <a href="home.html" class="mr-5 text-white bold font-bold">Home</a>
+                <a href="about_us.html" class="mr-5 hover:text-white">About Us</a>
+                <a href="feedback.html" class="mr-5 hover:text-white">Feedback</a>
+            </nav>
+
+
+            <div x-data="{ isOpen: false }" class="relative group ml-5" x-cloak>
+                <button @click="isOpen = !isOpen"
+                    class="  bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2 px-4 rounded-lg">Your
+                    Profile</button>
+                <div x-show="isOpen" @click.away="isOpen = false"
+                    class="absolute bg-gray-900 text-white mt-2 w-32 py-2 z-10 right-0" x-cloak>
+                    <a href="view_profile.html" class="block px-4 py-2 hover:text-gray-400">View Profile</a>
+                    <a href="home.html" class="block px-4 py-2 hover:text-gray-400">Logout</a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </header>
+
+    <div class="bg-gray-900 text-gray-100">
+
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-semibold mb-4">Create Recipe</h2>
+
+                <form id="recipeForm" method="post" action="home.html">
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2" for="title">Title</label>
+                        <input type="text" id="title" name="title"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            placeholder="Enter title">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2" for="description">Description</label>
+                        <textarea id="description" name="description"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            rows="4" placeholder="Enter description"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2" for="ingredients">Ingredients</label>
+                        <textarea id="ingredients" name="ingredients"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            rows="6" placeholder="Enter ingredients"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2"
+                            for="instructions">Instructions</label>
+                        <textarea id="instructions" name="instructions"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            rows="8" placeholder="Enter instructions"></textarea>
+                    </div>
+
+
+                    <div class="flex justify-end">
+                        <button id="submit" type="submit" value="Submit"
+                            class="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                <span class="ml-3 text-xl">Savory Secrets</span>
+            </a>
+            <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">©
+                2023 Savory Secrets
+
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="/scripts/createRecipes.js"></script>
+    <!-- You can include your footer here if needed -->
+
+</body>
+
+</html>

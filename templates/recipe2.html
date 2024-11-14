@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+    <title>Neapolitan Pizza</title>
+    
+</head>
+
+<body>
+    <!-- header -->
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                <span class="ml-3 text-xl">Savory Secrets</span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+                <a href="loggedInHome.html" class="mr-5 text-white bold font-bold">Home</a>
+                <a href="about_us.html" class="mr-5 hover:text-white">About Us</a>
+                <a href="feedback.html" class="mr-5 hover:text-white">Feedback</a>
+            </nav>
+
+
+            <div x-data="{ isOpen: false }" class="relative group ml-5" x-cloak>
+                <button @click="isOpen = !isOpen"
+                    class="  bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2 px-4 rounded-lg">Your
+                    Profile</button>
+                <div x-show="isOpen" @click.away="isOpen = false"
+                    class="absolute bg-gray-900 text-white mt-2 w-32 py-2 z-10 right-0" x-cloak>
+                    <a href="view_profile.html" class="block px-4 py-2 hover:text-gray-400">View Profile</a>
+                    <a href="home.html" class="block px-4 py-2 hover:text-gray-400">Logout</a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </header>
+
+    <div class="bg-gray-800 text-gray-100 ">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-900 rounded-lg shadow-md p-4 " style="margin-top: 100px; margin-bottom: 100px">
+                <h2 class="text-4xl font-bold text-center mb-4 text-white">Neapolitan Pizza</h2>
+                <p class="text-gray-500 italic mb-4 text-center">By User</p>
+
+                <div style="padding-left: 300px; ">
+                    <img src="/images/pizza.jpg" alt="" style="border-radius: 50px;">
+                </div>
+
+                <p class="text-gray-200 italic mb-4 py-3 px-10">Neapolitan Pizza is a classic Italian pizza known for
+                    its thin, soft, and chewy crust. Topped with simple and high-quality ingredients, it's a favorite
+                    among pizza enthusiasts..</p>
+                <p class="text-gray-500"><strong>Ingredients:</strong></p>
+                <div class="p-6 text-gray-200">
+                    <h3>For the Pizza Dough:</h3>
+                    <ul>
+                        <li>2 1/2 cups all-purpose flour</li>
+                        <li>1 teaspoon salt</li>
+                        <li>1 teaspoon sugar</li>
+                        <li>1 teaspoon active dry yeast</li>
+                        <li>1 cup warm water</li>
+                        <li>2 tablespoons olive oil</li>
+                    </ul>
+
+                    <h3>For the Pizza Sauce:</h3>
+                    <ul>
+                        <li>1 can (14 oz) crushed tomatoes</li>
+                        <li>1 clove garlic, minced</li>
+                        <li>1 teaspoon dried oregano</li>
+                        <li>1 teaspoon salt</li>
+                        <li>1/2 teaspoon black pepper</li>
+                    </ul>
+
+                    <h3>Toppings:</h3>
+                    <ul>
+                        <li>Fresh mozzarella cheese, sliced</li>
+                        <li>Fresh basil leaves</li>
+                        <li>Extra-virgin olive oil</li>
+                    </ul>
+                </div>
+                <p class="text-gray-500"><strong>Instructions:</strong></p>
+                <div class="p-6 text-gray-200">
+
+                    <h3>For the Pizza Dough:</h3>
+                    <ol>
+                        <li>In a small bowl, combine warm water, sugar, and yeast. Let it sit for about 5 minutes until
+                            it becomes frothy.</li>
+                        <li>In a large mixing bowl, combine the flour and salt. Make a well in the center.</li>
+                        <li>Pour the yeast mixture and olive oil into the well. Stir until the dough comes together.
+                        </li>
+                        <li>Knead the dough on a lightly floured surface for about 5-7 minutes until it's smooth and
+                            elastic.</li>
+                        <li>Place the dough in an oiled bowl, cover with a damp cloth, and let it rise for 1-2 hours
+                            until it has doubled in size.</li>
+                    </ol>
+
+                    <h3>For the Pizza Sauce:</h3>
+                    <ol>
+                        <li>In a small saucepan, heat a little olive oil and sauté minced garlic until fragrant.</li>
+                        <li>Add crushed tomatoes, dried oregano, salt, and pepper. Simmer for 15-20 minutes until the
+                            sauce thickens. Let it cool.</li>
+                    </ol>
+
+                    <h3>Assembling and Baking:</h3>
+                    <ol>
+                        <li>Preheat your oven to the highest temperature (usually around 500-550°F or 260-290°C) with a
+                            pizza stone inside if available.</li>
+                        <li>Divide the dough into 2-4 equal portions (depending on your desired pizza size). Roll out
+                            each portion into a thin circle on a floured surface.</li>
+                        <li>Place the rolled dough on a piece of parchment paper.</li>
+                        <li>Spread a thin layer of pizza sauce on the dough.</li>
+                        <li>Add slices of fresh mozzarella cheese and fresh basil leaves.</li>
+                        <li>Drizzle with extra-virgin olive oil.</li>
+                        <li>Use a pizza peel or a baking sheet to transfer the pizza (with parchment paper) onto the
+                            preheated pizza stone in the oven.</li>
+                        <li>Bake for about 7-10 minutes until the crust is golden and the cheese is bubbly and slightly
+                            browned.</li>
+                        <li>Remove the pizza from the oven, let it cool for a moment, and then slice and serve.</li>
+                    </ol>
+
+                    <p>Neapolitan Pizza is best enjoyed fresh out of the oven with its signature thin, soft, and
+                        blistered crust. Enjoy your homemade Neapolitan pizza!</p>
+                </div>
+
+            </div>
+            <div class="bg-gray-900 rounded-lg shadow-md p-4 " style="margin-top: 100px; margin-bottom: 100px">
+                <h2 class="text-4xl font-bold  mb-4 text-white">Comments</h2>
+                <form id="commentForm" method="post" action="home.html">
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2" for="comment">Add a comment</label>
+                        <input type="text" id="comment" name="title"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            placeholder="Type your comment here">
+                    </div>
+                    <div class="flex justify-end">
+                        <button id="submit" type="submit" value="Submit"
+                            class="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">Submit</button>
+                    </div>
+                </form>
+                <div class="bg-gray-900 rounded-2xl shadow-md p-5 border my-5">
+                    <p class="text-gray-400 font-extrabold text-xl"><strong>Giorgia Meloni</strong></p>
+                    <div class="p-6 text-gray-200 ">Dio!! amo la pizza</div>
+                </div>
+                <div class="bg-gray-900 rounded-2xl shadow-md p-5 border my-5">
+                    <p class="text-gray-400 font-extrabold text-xl"><strong>Gianluigi Buffon</strong></p>
+                    <div class="p-6 text-gray-200">Questa pizza è il motivo per cui abbiamo vinto la Coppa del mondo
+                    </div>
+
+                </div>
+                <div class="bg-gray-900 rounded-2xl shadow-md p-5 border my-5">
+                    <p class="text-gray-400 font-extrabold text-xl"><strong>Victor Osimhen</strong></p>
+                    <div class="p-6 text-gray-200">Only thing I love about Naples for now!</div>
+
+                </div>
+
+
+            </div>
+
+
+            <footer class="text-gray-400 bg-gray-900 body-font">
+                <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                    <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                        <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                        <span class="ml-3 text-xl">Savory Secrets</span>
+                    </a>
+                    <p
+                        class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+                        ©
+                        2023 Savory Secrets
+
+                    </p>
+
+                </div>
+            </footer>
+
+
+            <script src="/scripts/recipe2.js"></script>
+            <!-- You can include your footer here if needed -->
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Chhole Bhature</title>
+    
+</head>
+
+<body>
+    <!-- header -->
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0" href="loggedInHome.html">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                <span class="ml-3 text-xl">Savory Secrets</span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+                <a href="loggedInHome.html" class="mr-5 hover:text-white ">Home</a>
+                <a href="about_us.html" class="mr-5 hover:text-white">About Us</a>
+                <a href="feedback.html" class="mr-5 hover:text-white">Feedback</a>
+            </nav>
+            <div x-data="{ isOpen: false }" class="relative group ml-5" x-cloak>
+                <button @click="isOpen = !isOpen"
+                    class="  bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2 px-4 rounded-lg">Your
+                    Profile</button>
+                <div x-show="isOpen" @click.away="isOpen = false"
+                    class="absolute bg-gray-900 text-white mt-2 w-32 py-2 z-10 right-0" x-cloak>
+                    <a href="view_profile.html" class="block px-4 py-2 hover:text-gray-400">View Profile</a>
+                    <a href="home.html" class="block px-4 py-2 hover:text-gray-400">Logout</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="bg-gray-900 text-gray-100">
+
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-semibold mb-4">Create Recipe</h2>
+
+                <form id="recipeForm" method="post" action="home.html">
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2" for="title">Title</label>
+                        <input type="text" id="title" name="title"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            value="Chhole Bhature">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2" for="description">Description</label>
+                        <textarea id="description" name="description"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            rows="4">Chhole Bhature is a delicious and hearty dish that is often enjoyed for breakfast, lunch, or dinner in North India. The spicy and tangy chickpea curry pairs perfectly with the soft, fluffy, and deep-fried bhature, creating a delightful combination of flavors and textures.</textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2" for="ingredients">Ingredients</label>
+                        <textarea id="ingredients" name="ingredients"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            rows="6" placeholder="Enter ingredients">
+For the Chhole (Chickpea Curry):
+
+2 cups dried chickpeas (or 2 cans of chickpeas)
+2 medium-sized onions, finely chopped
+2 tomatoes, finely chopped
+2-3 green chilies, slit
+1-inch piece of ginger, minced
+5-6 garlic cloves, minced
+2 teaspoons cumin seeds
+1 teaspoon coriander powder
+1 teaspoon cumin powder
+1 teaspoon red chili powder (adjust to taste)
+1/2 teaspoon turmeric powder
+1 teaspoon garam masala
+2 tablespoons cooking oil
+Salt to taste
+Water
+Fresh coriander leaves for garnish
+
+For the Bhature (Fried Bread):
+
+2 cups all-purpose flour (maida)
+1/2 cup semolina (sooji)
+1/2 cup plain yogurt
+1/2 teaspoon baking powder
+1/2 teaspoon baking soda
+1 tablespoon sugar
+Salt to taste
+2 tablespoons cooking oil
+Water for kneading
+Cooking oil for frying
+                        </textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-bold mb-2"
+                            for="instructions">Instructions</label>
+                        <textarea id="instructions" name="instructions"
+                            class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200"
+                            rows="8" placeholder="Enter instructions">
+For the Chhole (Chickpea Curry):
+
+If using dried chickpeas, soak them in water overnight. If using canned chickpeas, rinse and drain them.
+In a pressure cooker or a large pot, heat 2 tablespoons of cooking oil over medium heat. Add cumin seeds and let them splutter.
+Add chopped onions and sauté until they become translucent.
+Stir in minced ginger and garlic and cook for a couple of minutes until the raw smell disappears.
+Add the chopped tomatoes and green chilies. Cook until the tomatoes are soft and the oil starts to separate.
+Add all the dry spices – coriander powder, cumin powder, red chili powder, turmeric powder, and salt. Cook the spices for a minute or two.
+Add the soaked (and drained) chickpeas and mix well.
+Add enough water to cover the chickpeas and bring it to a boil. If using a pressure cooker, cover and cook for 2-3 whistles, or simmer in a regular pot for 45-60 minutes until the chickpeas are soft and cooked.
+Once the chickpeas are cooked, add garam masala and simmer for an additional 10 minutes, allowing the flavors to meld together.
+Garnish with fresh coriander leaves.
+For the Bhature (Fried Bread):
+
+In a large mixing bowl, combine all-purpose flour, semolina, baking powder, baking soda, sugar, and salt.
+Add yogurt and 2 tablespoons of cooking oil. Mix well.
+Gradually add water and knead the dough until it's smooth and pliable. The dough should be soft but not sticky. Cover the dough with a damp cloth and let it rest for at least 2 hours.
+After resting, divide the dough into small portions and roll them into balls.
+Heat cooking oil in a deep pan for frying. It should be hot but not smoking.
+Roll each ball into a circle or oval shape (bhatura) and gently slide it into the hot oil.
+Fry each bhatura until it puffs up and turns golden brown on both sides. Press it down gently with a spatula to help it puff up.
+Remove the bhatura from the oil and drain on paper towels to remove excess oil.
+Serve the hot Chhole with the freshly fried Bhature. You can also serve it with sliced onions, pickles, and yogurt for a complete and satisfying meal. Enjoy your homemade Chhole Bhature!
+                        </textarea>
+                    </div>
+
+
+                    <div class="flex justify-end">
+                        <button id="submit" type="submit" value="Submit"
+                            class="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                <span class="ml-3 text-xl">Savory Secrets</span>
+            </a>
+            <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">©
+                2023 Savory Secrets
+
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="/scripts/editRecipe1.js"></script>
+    <!-- You can include your footer here if needed -->
+
+</body>
+
+</html>

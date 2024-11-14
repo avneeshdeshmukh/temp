@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+
+    <title>Home</title>
+
+</head>
+
+<body>
+
+
+
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0" href="#">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                <span class="ml-3 text-xl">Savory Secrets</span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+                <a href="#" class="mr-5 text-white bold font-bold">Home</a>
+                <a href="about_us.html" class="mr-5 hover:text-white">About Us</a>
+                <a href="feedback.html" class="mr-5 hover:text-white">Feedback</a>
+            </nav>
+
+
+            <div x-data="{ isOpen: false }" class="relative group ml-5" x-cloak>
+                <button @click="isOpen = !isOpen"
+                    class="  bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2 px-4 rounded-lg">Your
+                    Profile</button>
+                <div x-show="isOpen" @click.away="isOpen = false"
+                    class="absolute bg-gray-900 text-white mt-2 w-32 py-2 z-10 right-0" x-cloak>
+                    <a href="view_profile.html" class="block px-4 py-2 hover:text-gray-400">View Profile</a>
+                    <a href="home.html" class="block px-4 py-2 hover:text-gray-400">Logout</a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </header>
+
+
+
+
+
+
+    <div class="max-w-full mx-0 py-6 px-0 sm:px-6 lg:px-8 bg-gray-800">
+        <h1 class="text-6xl font-bold text-white font-cursive text-center"
+            style="margin-top: 10px; margin-bottom: 5px; font-family: 'Nova';">Welcome</h1>
+        <p class="text-xl text-gray-400 italic font-cursive text-center"
+            style="margin-top: 5px; margin-bottom: 40px; font-family: 'Nova';"> We're Glad To Have You As A Part Of Our Community!!</p>
+
+
+        <div class="bg-gray-200 py-8 my-10 rounded-lg shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Intro Text -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-gray-800">Welcome to Savory Secrets</h2>
+                        <p class="text-gray-600 mt-4">Discover a world of delicious recipes created with love and
+                            passion.
+                            Our mission is to provide you with culinary inspiration, tips, and mouthwatering dishes to
+                            elevate your cooking experience.</p>
+                        <a href="about_us.html"
+                            class="mt-6 inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-lg">Learn
+                            More</a>
+                    </div>
+                    <!-- Intro Image -->
+                    <div class="text-center">
+                        <img src="/images/intro.jpg" alt="Intro Image"
+                            class="w-full h-auto max-w-md mx-auto rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-3xl font-bold text-white  " style="margin-top: 10px; margin-bottom: 5px; font-family: 'Nova';">
+            Check
+            Out Our Latest Recipes</h1>
+        <p class="text-xl text-gray-400 italic  " style="margin-top: 5px; margin-bottom: 40px; font-family: 'Nova';">
+            Enjoy!!!</p>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-4">
+            <div class="bg-white rounded-lg shadow-md p-4" style="padding-bottom: 50px; padding-top: 20px;">
+                <h2 class="text-lg font-medium text-gray-800"> <a href="recipe1.html">Chhole Bhature</a></h2>
+                <p class="text-gray-600">Chhole Bhature is a delicious and hearty dish that is
+                    often enjoyed for breakfast, lunch, or dinner in North India. The spicy and tangy chickpea curry
+                    pairs perfectly with the soft, fluffy, and deep-fried bhature, creating a delightful combination of
+                    flavors and textures.</p>
+
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4" style="padding-bottom: 50px; padding-top: 20px;">
+                <h2 class="text-lg font-medium text-gray-800"> <a href="recipe2.html">Neapolitan Pizza</a></h2>
+                <p class="text-gray-600">Neapolitan Pizza is a classic Italian pizza known for
+                    its thin, soft, and chewy crust. Topped with simple and high-quality ingredients, it's a favorite
+                    among pizza enthusiasts..</p>
+
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center">
+                <svg class="h-8 w-8 text-gray-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+                <span class="text-sm text-gray-600"><a href="createRecipe.html">Add New Recipe</a> </span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <footer class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="/images/logo.png" alt="Logo" style="height: 50px">
+                <span class="ml-3 text-xl">Savory Secrets</span>
+            </a>
+            <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">©
+                2023 Savory Secrets
+
+            </p>
+
+        </div>
+    </footer>
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
